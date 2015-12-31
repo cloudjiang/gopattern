@@ -16,7 +16,7 @@ func (this *Server) Listen(addr string) error{
 var singleton = &Singleton{NewFuc:func() interface{} {return new(Server)}}
 
 func GetInstance() *Server {
-	return singleton.GetInstance().Inst.(*Server)
+	return singleton.GetInstance().(*Server)
 }
 
 func Test(t *testing.T) {
