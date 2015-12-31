@@ -1,4 +1,4 @@
-﻿package pattern
+package pattern
 
 import "sync"
 
@@ -8,7 +8,7 @@ type Singleton struct {
 	newFunc func() interface{}
 }
 
-func (this *Ston)GetInstance() interface{} {
+func (this *Singleton)GetInstance() interface{} {
 	this.once.Do(func() {
 		this.Inst = this.newFunc()
 	})
