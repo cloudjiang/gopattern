@@ -4,13 +4,13 @@ import "sync"
 
 type Singleton struct {
 	once sync.Once
-	Inst interface{}
+	inst interface{}
 	NewFunc func() interface{}
 }
 
 func (this *Singleton)GetInstance() interface{} {
 	this.once.Do(func() {
-		this.Inst = this.NewFunc()
+		this.inst = this.NewFunc()
 	})
-	return this.Inst
+	return this.inst
 }
