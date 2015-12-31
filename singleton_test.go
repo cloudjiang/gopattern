@@ -13,7 +13,7 @@ func (this *Server) Listen(addr string) error{
 	fmt.Println("server listen at ", addr)
 }
 
-var singleton = &Singleton{newFuc:func() interface{} {return new(Server)}}
+var singleton = &Singleton{NewFuc:func() interface{} {return new(Server)}}
 
 func GetInstance() *Server {
 	return singleton.GetInstance().Inst.(*Server)
